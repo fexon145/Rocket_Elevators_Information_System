@@ -10,60 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_18_223327) do
-
-  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
-  end
-
-  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
+ActiveRecord::Schema.define(version: 2021_06_15_145219) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "type_of_address"
-    t.string "status"
-    t.string "entity"
-    t.string "number_and_street"
-    t.string "suite_or_appartment"
-    t.string "city"
-    t.string "postal_code"
-    t.string "country"
-    t.string "notes"
+    t.string "TypeOfAddress"
+    t.string "Status"
+    t.string "Entity"
+    t.string "NumberAndStreet"
+    t.string "Apt"
+    t.string "City"
+    t.string "PostalCode"
+    t.string "Country"
+    t.text "Notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "battery_type"
-    t.string "status"
-    t.string "date_of_commissioning"
-    t.string "date_of_last_inspection"
-    t.string "certificate_of_operations"
-    t.string "information"
-    t.text "notes"
+    t.string "BType"
+    t.date "DateOfCommissioning"
+    t.date "DateOfLastInspection"
+    t.string "CertificateOfOperations"
+    t.text "Info"
+    t.text "Notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "building_id"
-    t.bigint "employee_id"
-    t.index ["building_id"], name: "index_batteries_on_building_id"
-    t.index ["employee_id"], name: "index_batteries_on_employee_id"
+    t.bigint "buildings_id"
+    t.bigint "employees_id"
+    t.index ["buildings_id"], name: "index_batteries_on_buildings_id"
+    t.index ["employees_id"], name: "index_batteries_on_employees_id"
   end
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "information_key"
-    t.string "value"
+    t.string "InformationKey"
+    t.string "Value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "building_id"
@@ -71,68 +51,68 @@ ActiveRecord::Schema.define(version: 2021_06_18_223327) do
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "full_name_of_the_building_administrator"
-    t.string "email_of_the_administrator"
-    t.string "phone_number_of_the_building_administrator"
-    t.string "full_name_of_the_technical_contact_for_the_building"
-    t.string "technical_contact_email_for_the_building"
-    t.string "technical_contact_phone_for_the_building"
+    t.string "FullNameOfTheBuildingAdministrator"
+    t.string "EmailOfTheAdministratorOfTheBuilding"
+    t.string "PhoneNumberOfTheBuildingAdministrator"
+    t.string "FullNameOfTheTechContactForTheBuilding"
+    t.string "TechContactEmail"
+    t.string "TechContactPhone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "customer_id"
-    t.bigint "address_of_the_building_id"
-    t.index ["address_of_the_building_id"], name: "index_buildings_on_address_of_the_building_id"
     t.index ["customer_id"], name: "index_buildings_on_customer_id"
   end
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "column_type"
-    t.integer "number_of_floors_served"
-    t.string "status"
-    t.string "information"
-    t.text "notes"
+    t.string "ColumnType"
+    t.integer "NbOfFloorsServed"
+    t.string "Status"
+    t.text "Info"
+    t.text "Notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "battery_id"
-    t.index ["battery_id"], name: "index_columns_on_battery_id"
+    t.bigint "batteries_id"
+    t.index ["batteries_id"], name: "index_columns_on_batteries_id"
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "customers_creation_date"
-    t.string "compagny_name"
-    t.string "full_name_of_the_company_contact"
-    t.string "company_contact_phone"
-    t.string "email_of_the_company_contact"
-    t.string "company_description"
-    t.string "full_name_of_service_technical_authority"
-    t.string "technical_authority_phone_for_service"
-    t.string "technical_manager_email_for_service"
+    t.string "CompanyName"
+    t.string "NameOfContact"
+    t.string "CompanyContactPhone"
+    t.string "EmailOfTheCompany"
+    t.text "CompanyDescription"
+    t.string "NameOfServiceTechAuthority"
+    t.string "TechAuhtorityPhone"
+    t.string "TechManagerServiceEmail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "company_headquarters_address_id"
-    t.index ["company_headquarters_address_id"], name: "index_customers_on_company_headquarters_address_id"
+    t.bigint "address_id"
+    t.index ["address_id"], name: "index_customers_on_address_id"
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "serial_number"
-    t.string "model"
-    t.string "elevator_type"
-    t.string "status"
-    t.string "date_of_commissioning"
-    t.string "date_of_last_inspection"
-    t.string "certificate_of_inspection"
-    t.string "information"
-    t.text "notes"
+    t.string "SerialNumber"
+    t.string "Model"
+    t.string "ElevatorType"
+    t.string "Status"
+    t.date "DateOfCommissioning"
+    t.date "DateOfLastInspection"
+    t.string "CertificateOfInspection"
+    t.text "Info"
+    t.text "Notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "column_id"
-    t.index ["column_id"], name: "index_elevators_on_column_id"
+    t.bigint "columns_id"
+    t.index ["columns_id"], name: "index_elevators_on_columns_id"
   end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "last_name"
-    t.string "first_name"
-    t.string "title"
+    t.string "FirstName"
+    t.string "LastName"
+    t.string "Title"
+    t.string "Email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -140,38 +120,51 @@ ActiveRecord::Schema.define(version: 2021_06_18_223327) do
   end
 
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "full_name"
-    t.string "email"
-    t.string "phone_number"
-    t.string "company_name"
-    t.string "project_name"
-    t.string "project_description"
-    t.string "departement"
-    t.string "message"
+    t.string "FullName"
+    t.string "CompanyName"
+    t.string "Email"
+    t.string "Phone"
+    t.string "ProjectName"
+    t.string "ProjectDescription"
+    t.string "Departement"
+    t.text "Message"
+    t.binary "AttachedFile"
+    t.datetime "DateOfRequest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "product_line"
-    t.decimal "number_of_appartement", precision: 10
-    t.decimal "number_of_floor", precision: 10
-    t.decimal "number_of_basement", precision: 10
-    t.decimal "number_of_companies", precision: 10
-    t.decimal "number_of_parking_spots", precision: 10
-    t.decimal "number_of_elevators", precision: 10
-    t.decimal "number_of_corporations", precision: 10
-    t.decimal "maximum_occupancy", precision: 10
-    t.decimal "business_hours", precision: 10
-    t.string "unit_price_of_each_elevator"
-    t.string "total_price_of_elevators"
-    t.string "installation_fees"
-    t.string "final_price"
-    t.string "company_name"
-    t.string "email"
+    t.string "BuildingType"
+    t.integer "NumberOfFloors"
+    t.integer "NumberOfBasements"
+    t.integer "NumberOfcompanies"
+    t.integer "NumberOfParkingSpots"
+    t.integer "NumberOfElevators"
+    t.integer "NumberOfApartments"
+    t.integer "NumberOfCorporations"
+    t.integer "NumberOfOccupany"
+    t.integer "NumberOfBusinessHours"
+    t.integer "ElevatorAmount"
+    t.integer "ColumnAmount"
+    t.string "ProductLine"
+    t.integer "ElevatorUnitCost"
+    t.integer "ElevatorTotalCost"
+    t.integer "InstallationCost"
+    t.integer "TotalPrice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["name"], name: "index_roles_on_name"
+    t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -186,15 +179,21 @@ ActiveRecord::Schema.define(version: 2021_06_18_223327) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "batteries", "buildings"
-  add_foreign_key "batteries", "employees"
+  create_table "users_roles", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "role_id"
+    t.index ["role_id"], name: "index_users_roles_on_role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+    t.index ["user_id"], name: "index_users_roles_on_user_id"
+  end
+
+  add_foreign_key "batteries", "buildings", column: "buildings_id"
+  add_foreign_key "batteries", "employees", column: "employees_id"
   add_foreign_key "building_details", "buildings"
-  add_foreign_key "buildings", "addresses", column: "address_of_the_building_id"
   add_foreign_key "buildings", "customers"
-  add_foreign_key "columns", "batteries"
-  add_foreign_key "customers", "addresses", column: "company_headquarters_address_id"
+  add_foreign_key "columns", "batteries", column: "batteries_id"
+  add_foreign_key "customers", "addresses"
   add_foreign_key "customers", "users"
-  add_foreign_key "elevators", "columns"
+  add_foreign_key "elevators", "columns", column: "columns_id"
   add_foreign_key "employees", "users"
 end

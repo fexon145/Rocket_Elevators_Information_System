@@ -1,19 +1,39 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  product_line: MyString
-  number_of_elevator: 
-  unit_price_of_each_elevator: 
-  total_price_of_elevators: 
-  installation_fees: 
-  final_price: 
+  BuildingType: MyString
+  NumberOfFloors: 1
+  NumberOfBasements: 1
+  NumberOfcompanies: 1
+  NumberOfParkingSpots: 1
+  NumberOfElevators: 1
+  NumberOfApartments: 1
+  NumberOfCorporations: 1
+  NumberOfOccupany: 1
+  NumberOfBusinessHours: 1
+  ElevatorAmount: 1
+  ColumnAmount: 1
+  ProductLine: MyString
+  ElevatorUnitCost: 1
+  ElevatorTotalCost: 1
+  InstallationCost: 1
+  TotalPrice: 1
 
 two:
-  name: MyString
-  product_line: MyString
-  number_of_elevator: 
-  unit_price_of_each_elevator: 
-  total_price_of_elevators: 
-  installation_fees: 
-  final_price: 
+  BuildingType: MyString
+  NumberOfFloors: 1
+  NumberOfBasements: 1
+  NumberOfcompanies: 1
+  NumberOfParkingSpots: 1
+  NumberOfElevators: 1
+  NumberOfApartments: 1
+  NumberOfCorporations: 1
+  NumberOfOccupany: 1
+  NumberOfBusinessHours: 1
+  ElevatorAmount: 1
+  ColumnAmount: 1
+  ProductLine: MyString
+  ElevatorUnitCost: 1
+  ElevatorTotalCost: 1
+  InstallationCost: 1
+  TotalPrice: 1

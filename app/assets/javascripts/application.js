@@ -10,13 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require rails-ujs
 //= require activestorage
-//= require jquery
-//= require cable
-//= require scripts
-//= require contact
-//= require_tree ./channels
-//= require_tree ./view
-//= require_tree ./plugins
-
-
+//= require jquery-3.3.1.min
+//= link scripts
+//= link contact
+//= link quote
+//= link gmaps
+//= link view/demo.revolution_slider.js
+//= link slider.revolution/js/jquery.themepunch.revolution.min.js
+//= link slider.revolution/js/jquery.themepunch.tools.min.js

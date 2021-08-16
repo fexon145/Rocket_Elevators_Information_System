@@ -25,7 +25,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to index_url, notice: "Quote was successfully created." }
+        format.html { redirect_to @quote, notice: "Quote was successfully created." }
         format.json { render :show, status: :created, location: @quote }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -64,6 +64,6 @@ class QuotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quote_params
-      params.require(:quotes).permit(:name, :product_line, :number_of_appartement, :number_of_floor, :number_of_basement, :number_of_companies, :number_of_parking_spots, :number_of_elevators, :number_of_corporations, :maximum_occupancy, :business_hours, :unit_price_of_each_elevator, :total_price_of_elevators, :installation_fees, :final_price, :company_name, :email)
+      params.require(:quote).permit(:BuildingType, :NumberOfFloors, :NumberOfBasements, :NumberOfcompanies, :NumberOfParkingSpots, :NumberOfElevators, :NumberOfApartments, :NumberOfCorporations, :NumberOfOccupany, :NumberOfBusinessHours, :ElevatorAmount, :ColumnAmount, :ProductLine, :ElevatorUnitCost, :ElevatorTotalCost, :InstallationCost, :TotalPrice)
     end
 end

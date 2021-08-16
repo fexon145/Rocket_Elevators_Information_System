@@ -17,7 +17,7 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create quote" do
     assert_difference('Quote.count') do
-      post quotes_url, params: { quote: { final_price: @quote.final_price, installation_fees: @quote.installation_fees, name: @quote.name, number_of_elevator: @quote.number_of_elevator, product_line: @quote.product_line, total_price_of_elevators: @quote.total_price_of_elevators, unit_price_of_each_elevator: @quote.unit_price_of_each_elevator } }
+      post quotes_url, params: { quote: { BuildingType: @quote.BuildingType, ColumnAmount: @quote.ColumnAmount, ElevatorAmount: @quote.ElevatorAmount, ElevatorTotalCost: @quote.ElevatorTotalCost, ElevatorUnitCost: @quote.ElevatorUnitCost, InstallationCost: @quote.InstallationCost, NumberOfApartments: @quote.NumberOfApartments, NumberOfBasements: @quote.NumberOfBasements, NumberOfBusinessHours: @quote.NumberOfBusinessHours, NumberOfCorporations: @quote.NumberOfCorporations, NumberOfElevators: @quote.NumberOfElevators, NumberOfFloors: @quote.NumberOfFloors, NumberOfOccupany: @quote.NumberOfOccupany, NumberOfParkingSpots: @quote.NumberOfParkingSpots, NumberOfcompanies: @quote.NumberOfcompanies, ProductLine: @quote.ProductLine, TotalPrice: @quote.TotalPrice } }
     end
 
     assert_redirected_to quote_url(Quote.last)
@@ -34,7 +34,7 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update quote" do
-    patch quote_url(@quote), params: { quote: { final_price: @quote.final_price, installation_fees: @quote.installation_fees, name: @quote.name, number_of_elevator: @quote.number_of_elevator, product_line: @quote.product_line, total_price_of_elevators: @quote.total_price_of_elevators, unit_price_of_each_elevator: @quote.unit_price_of_each_elevator } }
+    patch quote_url(@quote), params: { quote: { BuildingType: @quote.BuildingType, ColumnAmount: @quote.ColumnAmount, ElevatorAmount: @quote.ElevatorAmount, ElevatorTotalCost: @quote.ElevatorTotalCost, ElevatorUnitCost: @quote.ElevatorUnitCost, InstallationCost: @quote.InstallationCost, NumberOfApartments: @quote.NumberOfApartments, NumberOfBasements: @quote.NumberOfBasements, NumberOfBusinessHours: @quote.NumberOfBusinessHours, NumberOfCorporations: @quote.NumberOfCorporations, NumberOfElevators: @quote.NumberOfElevators, NumberOfFloors: @quote.NumberOfFloors, NumberOfOccupany: @quote.NumberOfOccupany, NumberOfParkingSpots: @quote.NumberOfParkingSpots, NumberOfcompanies: @quote.NumberOfcompanies, ProductLine: @quote.ProductLine, TotalPrice: @quote.TotalPrice } }
     assert_redirected_to quote_url(@quote)
   end
 

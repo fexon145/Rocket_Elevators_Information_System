@@ -12,43 +12,53 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :full_name %>
-    <%= form.text_field :full_name %>
+    <%= form.label :FullName %>
+    <%= form.text_field :FullName %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.label :CompanyName %>
+    <%= form.text_field :CompanyName %>
   </div>
 
   <div class="field">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
+    <%= form.label :Email %>
+    <%= form.text_field :Email %>
   </div>
 
   <div class="field">
-    <%= form.label :company_name %>
-    <%= form.text_field :company_name %>
+    <%= form.label :Phone %>
+    <%= form.text_field :Phone %>
   </div>
 
   <div class="field">
-    <%= form.label :project_name %>
-    <%= form.text_field :project_name %>
+    <%= form.label :ProjectName %>
+    <%= form.text_field :ProjectName %>
   </div>
 
   <div class="field">
-    <%= form.label :project_description %>
-    <%= form.text_field :project_description %>
+    <%= form.label :ProjectDescription %>
+    <%= form.text_field :ProjectDescription %>
   </div>
 
   <div class="field">
-    <%= form.label :departement %>
-    <%= form.text_field :departement %>
+    <%= form.label :Departement %>
+    <%= form.text_field :Departement %>
   </div>
 
   <div class="field">
-    <%= form.label :message %>
-    <%= form.text_field :message %>
+    <%= form.label :Message %>
+    <%= form.text_area :Message %>
+  </div>
+
+  <div class="field">
+    <%= form.label :AttachedFile %>
+    <%= form.text_field :AttachedFile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DateOfRequest %>
+    <%= form.datetime_select :DateOfRequest %>
   </div>
 
   <div class="actions">

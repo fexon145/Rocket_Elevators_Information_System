@@ -10,21 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
- *= require font-awesome
+ *= require bootstrap/css/bootstrap.min
+ *= require slider.revolution/css/extralayers
+ *= require slider.revolution/css/settings
+ *= require essentials
+ *= require layout
+ *= require header-1
+ *= require color_scheme/rocketelevator
  */
- @import url(bootstrap.min.css);
- @import url(essentials.css);
- @import url(layout.css);
- @import url(header-1.css);
- @import url(color_scheme/darkblue.css);
- @import url(fonts/revicons.ttf);
- @import url(fonts/revicons.woff);
- @import url(settings.css);
- @import url(extralayers.css);
- @import url(fonts/font-icons.ttf);
- @import url(fonts/font-icons.woff);
- @import url(fonts/fontawesome-webfont.woff);
- @import url(fonts/fontawesome-webfont.woff2);
- 

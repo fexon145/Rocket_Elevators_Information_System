@@ -14,13 +14,23 @@ class QuotesTest < ApplicationSystemTestCase
     visit quotes_url
     click_on "New Quote"
 
-    fill_in "Final price", with: @quote.final_price
-    fill_in "Installation fees", with: @quote.installation_fees
-    fill_in "Name", with: @quote.name
-    fill_in "Number of elevator", with: @quote.number_of_elevator
-    fill_in "Product line", with: @quote.product_line
-    fill_in "Total price of elevators", with: @quote.total_price_of_elevators
-    fill_in "Unit price of each elevator", with: @quote.unit_price_of_each_elevator
+    fill_in "Buildingtype", with: @quote.BuildingType
+    fill_in "Columnamount", with: @quote.ColumnAmount
+    fill_in "Elevatoramount", with: @quote.ElevatorAmount
+    fill_in "Elevatortotalcost", with: @quote.ElevatorTotalCost
+    fill_in "Elevatorunitcost", with: @quote.ElevatorUnitCost
+    fill_in "Installationcost", with: @quote.InstallationCost
+    fill_in "Numberofapartments", with: @quote.NumberOfApartments
+    fill_in "Numberofbasements", with: @quote.NumberOfBasements
+    fill_in "Numberofbusinesshours", with: @quote.NumberOfBusinessHours
+    fill_in "Numberofcorporations", with: @quote.NumberOfCorporations
+    fill_in "Numberofelevators", with: @quote.NumberOfElevators
+    fill_in "Numberoffloors", with: @quote.NumberOfFloors
+    fill_in "Numberofoccupany", with: @quote.NumberOfOccupany
+    fill_in "Numberofparkingspots", with: @quote.NumberOfParkingSpots
+    fill_in "Numberofcompanies", with: @quote.NumberOfcompanies
+    fill_in "Productline", with: @quote.ProductLine
+    fill_in "Totalprice", with: @quote.TotalPrice
     click_on "Create Quote"
 
     assert_text "Quote was successfully created"
@@ -31,13 +41,23 @@ class QuotesTest < ApplicationSystemTestCase
     visit quotes_url
     click_on "Edit", match: :first
 
-    fill_in "Final price", with: @quote.final_price
-    fill_in "Installation fees", with: @quote.installation_fees
-    fill_in "Name", with: @quote.name
-    fill_in "Number of elevator", with: @quote.number_of_elevator
-    fill_in "Product line", with: @quote.product_line
-    fill_in "Total price of elevators", with: @quote.total_price_of_elevators
-    fill_in "Unit price of each elevator", with: @quote.unit_price_of_each_elevator
+    fill_in "Buildingtype", with: @quote.BuildingType
+    fill_in "Columnamount", with: @quote.ColumnAmount
+    fill_in "Elevatoramount", with: @quote.ElevatorAmount
+    fill_in "Elevatortotalcost", with: @quote.ElevatorTotalCost
+    fill_in "Elevatorunitcost", with: @quote.ElevatorUnitCost
+    fill_in "Installationcost", with: @quote.InstallationCost
+    fill_in "Numberofapartments", with: @quote.NumberOfApartments
+    fill_in "Numberofbasements", with: @quote.NumberOfBasements
+    fill_in "Numberofbusinesshours", with: @quote.NumberOfBusinessHours
+    fill_in "Numberofcorporations", with: @quote.NumberOfCorporations
+    fill_in "Numberofelevators", with: @quote.NumberOfElevators
+    fill_in "Numberoffloors", with: @quote.NumberOfFloors
+    fill_in "Numberofoccupany", with: @quote.NumberOfOccupany
+    fill_in "Numberofparkingspots", with: @quote.NumberOfParkingSpots
+    fill_in "Numberofcompanies", with: @quote.NumberOfcompanies
+    fill_in "Productline", with: @quote.ProductLine
+    fill_in "Totalprice", with: @quote.TotalPrice
     click_on "Update Quote"
 
     assert_text "Quote was successfully updated"

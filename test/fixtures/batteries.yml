@@ -1,23 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  building_id: 1
-  type: 
-  status: MyString
-  employee_id: 1
-  date_of_commissioning: MyString
-  date_of_last_inspection: MyString
-  certificate_of_operations: MyString
-  information: MyString
-  notes: MyText
+  BType: MyString
+  DateOfCommissioning: 2021-06-13
+  DateOfLastInspection: 2021-06-13
+  CertificateOfOperations: MyString
+  Info: MyText
+  Notes: MyText
 
 two:
-  building_id: 1
-  type: 
-  status: MyString
-  employee_id: 1
-  date_of_commissioning: MyString
-  date_of_last_inspection: MyString
-  certificate_of_operations: MyString
-  information: MyString
-  notes: MyText
+  BType: MyString
+  DateOfCommissioning: 2021-06-13
+  DateOfLastInspection: 2021-06-13
+  CertificateOfOperations: MyString
+  Info: MyText
+  Notes: MyText

@@ -14,14 +14,16 @@ class LeadsTest < ApplicationSystemTestCase
     visit leads_url
     click_on "New Lead"
 
-    fill_in "Company name", with: @lead.company_name
-    fill_in "Departement", with: @lead.departement
-    fill_in "Email", with: @lead.email
-    fill_in "Full name", with: @lead.full_name
-    fill_in "Message", with: @lead.message
-    fill_in "Phone number", with: @lead.phone_number
-    fill_in "Project description", with: @lead.project_description
-    fill_in "Project name", with: @lead.project_name
+    fill_in "Attachedfile", with: @lead.AttachedFile
+    fill_in "Companyname", with: @lead.CompanyName
+    fill_in "Dateofrequest", with: @lead.DateOfRequest
+    fill_in "Departement", with: @lead.Departement
+    fill_in "Email", with: @lead.Email
+    fill_in "Fullname", with: @lead.FullName
+    fill_in "Message", with: @lead.Message
+    fill_in "Phone", with: @lead.Phone
+    fill_in "Projectdescription", with: @lead.ProjectDescription
+    fill_in "Projectname", with: @lead.ProjectName
     click_on "Create Lead"
 
     assert_text "Lead was successfully created"
@@ -32,14 +34,16 @@ class LeadsTest < ApplicationSystemTestCase
     visit leads_url
     click_on "Edit", match: :first
 
-    fill_in "Company name", with: @lead.company_name
-    fill_in "Departement", with: @lead.departement
-    fill_in "Email", with: @lead.email
-    fill_in "Full name", with: @lead.full_name
-    fill_in "Message", with: @lead.message
-    fill_in "Phone number", with: @lead.phone_number
-    fill_in "Project description", with: @lead.project_description
-    fill_in "Project name", with: @lead.project_name
+    fill_in "Attachedfile", with: @lead.AttachedFile
+    fill_in "Companyname", with: @lead.CompanyName
+    fill_in "Dateofrequest", with: @lead.DateOfRequest
+    fill_in "Departement", with: @lead.Departement
+    fill_in "Email", with: @lead.Email
+    fill_in "Fullname", with: @lead.FullName
+    fill_in "Message", with: @lead.Message
+    fill_in "Phone", with: @lead.Phone
+    fill_in "Projectdescription", with: @lead.ProjectDescription
+    fill_in "Projectname", with: @lead.ProjectName
     click_on "Update Lead"
 
     assert_text "Lead was successfully updated"
